@@ -1,1 +1,45 @@
-this is my file
+# DecodeLabs Full Stack Project
+
+Welcome to the DecodeLabs Industrial Training Kit (Batch 2026) workspace! This repository contains the milestones for becoming a Full Stack Developer.
+
+## Overview
+
+This project is divided into two main phases:
+
+### Project 1: Responsive Frontend Interface
+The interface phase focuses on creating a responsive, mobile-first web layout. 
+* **Tech Stack:** HTML5, CSS3 (Flexbox/Grid), and vanilla JavaScript.
+* **Goals:** Semantic architecture, accessible design, and a modern 2025 aesthetic (Warmth & Grounding).
+
+### Project 2: Backend API Development (Currently in Progress)
+The integration phase focuses on building the logical nervous system of the application.
+* **Tech Stack:** Node.js, Express.js.
+* **Goals:** Create RESTful API endpoints, handle data ingress/egress, syntactic/semantic validation, and manage HTTP state.
+
+---
+
+## Getting Started
+
+### Prerequisites
+You will need to have [Node.js](https://nodejs.org/) installed on your machine to run the backend API.
+
+### Installation
+1. Clone this repository to your local machine.
+2. Open your terminal in the project directory.
+3. Install the dependencies for the backend:
+   ```bash
+   npm install
+   ```
+
+### Running the Project
+To start the development server for the backend API:
+```bash
+npm run dev
+```
+*(Note: Ensure you have `nodemon` installed to run the dev script, or start the server manually using `node server.js`)*
+
+---
+
+**Developed for DecodeLabs**
+*Location: Greater Lucknow, India*
+*Website: www.decodelabs.tech*

@@ -1,0 +1,321 @@
+/* 
+  2025 UI/UX Compliance - Aesthetics
+  Color Palette:
+  - #A5856F : Mocha Mousse (Stability)
+  - #A0D4E0 : Ethereal Blue (Trust)
+  - #F2F0EA : Moonlit Grey (Refinement)
+*/
+
+:root {
+    --mocha-mousse: #A5856F;
+    --ethereal-blue: #A0D4E0;
+    --moonlit-grey: #F2F0EA;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* 
+  CSS Reset & Base Styles 
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--moonlit-grey);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* Fluid Typography */
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+p { font-size: clamp(1rem, 1.2vw, 1.125rem); margin-bottom: 1rem; }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* 
+  Header & Navigation Container (50px height spec)
+  Flexbox used for Micro Components
+*/
+.main-header {
+    background-color: var(--text-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    height: 50px; /* Layout specification */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--mocha-mousse);
+}
+
+.nav-links {
+    display: none; /* Mobile first: hidden by default */
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a:hover {
+    color: var(--ethereal-blue);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-dark);
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+.hamburger::before { top: -6px; }
+.hamburger::after { top: 6px; }
+
+/* Open state for mobile menu */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--text-light);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    gap: 1rem;
+    text-align: center;
+}
+
+/* 
+  Hero Section (360px height spec)
+*/
+.hero-section {
+    min-height: 360px; /* Layout specification */
+    background-color: var(--mocha-mousse);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.cta-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    background-color: var(--ethereal-blue);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #8ac0cc;
+    transform: translateY(-2px);
+}
+
+/* 
+  Main Layout (Macro Layout with CSS Grid)
+*/
+.main-layout {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first: single column */
+    gap: 2rem;
+}
+
+/* Primary Content Grid */
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature-article {
+    background-color: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Side Panel */
+.side-panel {
+    background-color: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.side-panel ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.side-panel li {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--moonlit-grey);
+}
+
+.side-panel li a:hover {
+    color: var(--mocha-mousse);
+}
+
+.highlight-box {
+    background-color: var(--ethereal-blue);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+.highlight-box h4 {
+    color: var(--text-dark);
+}
+
+/* 
+  Footer Container
+*/
+.footer-container {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    padding: 3rem 1rem 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    color: var(--mocha-mousse);
+}
+
+.footer-contact a {
+    color: var(--ethereal-blue);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.875rem;
+}
+
+
+/* 
+  Media Queries for Responsive Layout 
+*/
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+    /* Main Layout: Move to a basic 2-column if needed, or adjust feature articles */
+    .content-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .feature-article {
+        flex: 1 1 calc(50% - 1rem); /* 2 columns for articles */
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+    /* Header: Show normal nav, hide hamburger */
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Main Layout: Grid structure for main content and sidebar */
+    .main-layout {
+        grid-template-columns: 3fr 1fr; /* 3:1 ratio for content and sidebar */
+    }
+    
+    .feature-article {
+        flex: 1 1 100%; /* Make articles stack or keep them as grid inside main */
+    }
+}
